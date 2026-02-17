@@ -50,7 +50,6 @@ export interface PlayerView {
     hand?: Card[];
     hasHand: boolean;
     isSelf: boolean;
-    position: number;
     isDealer: boolean;
     isCurrentTurn: boolean;
     totalContributed: number;

@@ -9,7 +9,10 @@ import { Card } from './components/Card';
 import { Users, Bell, Coins, X } from 'lucide-react';
 import './App.css';
 
-const socket: Socket = io({
+// const SOCKET_URL = `http://${window.location.hostname}:3001`; // 本地测试
+const SOCKET_URL = undefined; // 上线使用
+
+const socket: Socket = io(SOCKET_URL, {
     reconnection: true,
     reconnectionDelay: 1000,
     reconnectionAttempts: 10

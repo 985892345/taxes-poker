@@ -21,7 +21,7 @@ export class Game {
     public state: GameState = GameState.Waiting;
     public currentPot: number = 0;
     public currentMaxBet: number = 0;
-    public dealerIndex: number = 0;
+    public dealerIndex: number = -1;
     public currentTurnIndex: number = 0;
     public currentTurnPlayerId: string = '';
     public minBet: number = 20;
@@ -66,6 +66,7 @@ export class Game {
         // 大小盲，采用随机计算
         const sbIndex = Math.floor(Math.random() * this.initActivePlayers.length);
         const bbIndex = (sbIndex + 1) % this.initActivePlayers.length;
+        this.dealerIndex = sbIndex;
 
         const sbPlayer = this.initActivePlayers[sbIndex]!;
         const bbPlayer = this.initActivePlayers[bbIndex]!;
